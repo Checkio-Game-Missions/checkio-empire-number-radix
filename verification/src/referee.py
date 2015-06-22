@@ -1,12 +1,8 @@
-from checkio_referee import RefereeBase, representations
+from checkio_referee import RefereeBase, representations, covercodes, ENV_NAME
 
 
 import settings_env
 from tests import TESTS
-
-cover = """def cover(func, data):
-    return func(str(data[0]), data[1])
-"""
 
 
 class Referee(RefereeBase):
@@ -15,12 +11,10 @@ class Referee(RefereeBase):
 
     DEFAULT_FUNCTION_NAME = "convert"
     ENV_COVERCODE = {
-        "python_2": cover,
-        "python_3": cover,
-        "javascript": None
+        ENV_NAME.PYTHON: covercodes.py_unwrap_args,
+        ENV_NAME.JS_NODE: covercodes.js_unwrap_args
     }
     CALLED_REPRESENTATIONS = {
-        "python_2": representations.unwrap_arg_representation,
-        "python_3": representations.unwrap_arg_representation,
-        "javascript": representations.unwrap_arg_representation,
+        ENV_NAME.PYTHON: representations.unwrap_arg_representation,
+        ENV_NAME.JS_NODE: representations.unwrap_arg_representation,
     }
