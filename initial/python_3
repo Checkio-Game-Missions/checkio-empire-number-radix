@@ -9,3 +9,5 @@ if __name__ == '__main__':
     assert convert("101", 5) == 26, "5 base"
     assert convert("Z", 36) == 35, "Z base"
     assert convert("AB", 10) == -1, "B > A > 10"
+
+    print("Use 'Check' to earn sweet rewards!")
