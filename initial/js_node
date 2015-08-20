@@ -12,4 +12,5 @@ if (!global.is_checking) {
     assert.equal(convert("101", 2), 5, "Bin");
     assert.equal(convert("101", 5), 26, "5 base");
     assert.equal(convert("Z", 36), 35, "Z base");
+    console.log("All done? Earn rewards by using the 'Check' button!");
 }
